@@ -26,11 +26,13 @@ jobs:
         working-directory: ./build
         run: cmake ..
         run: make
+      - name: "compress build"
+        run: tar -cvf build.tar build
       - name: "upload build directory as artifact"
         uses: actions/upload-artifact@v3
         with:
           name: build_dir
-          path: build/
+          path: build.tar
           retention-days: 1
           if-no-files-found: error
   test:
@@ -44,6 +46,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build_dir
+      - name: "decompress build"
+        run: tar -xvf build.tar build
       - name: "run tests"
       working-directory: ./build
         run: make test
