@@ -45,5 +45,5 @@ jobs:
         with:
           name: build_dir
       - name: "run tests"
-      working-directory: build
-        run: ctest
+      working-directory: ./build
+        run: make test
