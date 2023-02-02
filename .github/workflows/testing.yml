@@ -34,7 +34,7 @@ jobs:
           retention-days: 1
           if-no-files-found: error
   test:
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
