@@ -1,6 +1,6 @@
-[![testing cpp workflow](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml/badge.svg)](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml)
-
 # SIDEMADE - Simple Dense Matrix Decomposition
+
+[![testing cpp workflow](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml/badge.svg)](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml)
 
 A simple demo code to read dense matrices from files and solve linear systems with them.
 
