@@ -32,7 +32,7 @@ jobs:
       - name: "upload build directory as artifact"
         uses: actions/upload-artifact@v3
         with:
-          name: build_dir
+          name: builddir
           path: build.tar
           retention-days: 1
           if-no-files-found: error
@@ -43,12 +43,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: "Install necessary c++ dependencies"
         run: sudo apt update && sudo apt install cmake gcc libeigen3-dev libyaml-cpp-dev libboost-all-dev
-      - name: "Download build directory"
       - uses: actions/download-artifact@v3
         with:
-          name: build_dir
+          name: builddir
       - name: "decompress build"
         run: tar -xvf build.tar build
       - name: "run tests"
-      working-directory: ./build
+        working-directory: ./build
         run: make test
