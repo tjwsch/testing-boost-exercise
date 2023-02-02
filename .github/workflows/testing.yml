@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build_dir
-          path: build
+          path: build/
           retention-days: 1
           if-no-files-found: error
   test:
@@ -45,5 +45,5 @@ jobs:
         with:
           name: build_dir
       - name: "run tests"
-      working-directory: ./build
+      working-directory: build
         run: make test
