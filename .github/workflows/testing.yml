@@ -14,7 +14,6 @@ jobs:
         run: clang-format -i src/*
         run: clang-format -i test/*
   build:
-    needs: style
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -22,9 +21,11 @@ jobs:
         run: sudo apt update && sudo apt install cmake gcc libeigen3-dev libyaml-cpp-dev libboost-all-dev
       - name: "Create build folder"
         run: mkdir build
-      - name: "build"
+      - name: "build cmake"
         working-directory: ./build
         run: cmake ..
+      - name: "build make"
+        working-directory: ./build
         run: make
       - name: "compress build"
         run: tar -cvf build.tar build
@@ -43,7 +44,7 @@ jobs:
       - name: "Install necessary c++ dependencies"
         run: sudo apt update && sudo apt install cmake gcc libeigen3-dev libyaml-cpp-dev libboost-all-dev
       - name: "Download build directory"
-        uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: build_dir
       - name: "decompress build"
