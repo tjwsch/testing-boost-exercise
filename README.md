@@ -1,4 +1,4 @@
-![testing workflow](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml/badge.svg)](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml)
+[![testing cpp workflow](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml/badge.svg)](https://github.com/tjwsch/testing-boost-exercise/actions/workflows/testing.yml)
 
 # SIDEMADE - Simple Dense Matrix Decomposition
 
